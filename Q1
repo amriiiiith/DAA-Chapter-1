@@ -1,0 +1,24 @@
+#include <string.h>
+
+char* first_palindrome(char** words, int wordsSize) {
+    for (int i = 0; i < wordsSize; i++) {
+        int start = 0;
+        int end = strlen(words[i]) - 1;
+        int is_palindrome = 1;
+
+        while (start < end) {
+            if (words[i][start] != words[i][end]) {
+                is_palindrome = 0;
+                break;
+            }
+            start++;
+            end--;
+        }
+
+        if (is_palindrome) {
+            return words[i];
+        }
+    }
+
+    return "";
+}
