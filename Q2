@@ -1,0 +1,14 @@
+int main() {
+    int nums1[] = {2,3,2};
+    int nums2[] = {1,2};
+    int nums1Size = sizeof(nums1) / sizeof(nums1[0]);
+    int nums2Size = sizeof(nums2) / sizeof(nums2[0]);
+    int returnSize;
+
+    int* result = intersectionSizeTwo(nums1, nums1Size, nums2, nums2Size, &returnSize);
+    printf("[%d,%d]\n", result[0], result[1]);  // Output: [1,1]
+
+    free(result);
+
+    return 0;
+}
