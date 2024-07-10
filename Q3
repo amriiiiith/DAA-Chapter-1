@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int subarrayDistinctCount(int* nums, int numsSize) {
+    int sum = 0;
+    for (int i = 0; i < numsSize; i++) {
+        int count[1001] = {0};  // assuming max value in nums is 1000
+        int distinct = 0;
+        for (int j = i; j < numsSize; j++) {
+            if (count[nums[j]] == 0) {
+                distinct++;
+            }
+            count[nums[j]]++;
+            sum += distinct * distinct;
+        }
+    }
+    return sum;
+}
